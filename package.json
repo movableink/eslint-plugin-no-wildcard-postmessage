@@ -14,7 +14,8 @@
     "@movable/prettier-config": "^0.3.1",
     "eslint": "^6.8.0",
     "eslint-plugin-node": "^11.1.0",
-    "mocha": "^3.2.0"
+    "mocha": "^3.2.0",
+    "standard-version": "^7.1.0"
   },
   "dependencies": {},
   "homepage": "https://github.com/mozfreddyb/eslint-plugin-no-wildcard-postmessage/",
@@ -33,7 +34,8 @@
   },
   "scripts": {
     "test": "mocha tests/rules/",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "release": "standard-version"
   },
   "engines": {
     "node": ">= 10"
@@ -41,5 +43,10 @@
   "volta": {
     "node": "12.16.2",
     "yarn": "1.22.4"
+  },
+  "standard-version": {
+    "scripts": {
+      "postchangelog": "prettier --write CHANGELOG.md"
+    }
   }
 }
