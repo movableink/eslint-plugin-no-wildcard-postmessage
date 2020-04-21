@@ -10,18 +10,15 @@ We will postMessage calls that contain a target origin of `"*"`.
 Disallowed:
 
 ```js
-frame.postMessage(obj, "*");
-
+frame.postMessage(obj, '*');
 ```
 
 A few examples of allowed practices:
 
-
 ```js
-frame.postMessage(obj, "http://domain.tld");
+frame.postMessage(obj, 'http://domain.tld');
 // in a worker:
 postMessage(obj);
 ```
 
-
-This rule is being used within Mozilla to maintain and improve the security of the Firefox OS front-end codebase *Gaia*. Further documentation, which includes references to the escaping functions can be found on [MDN](https://developer.mozilla.org/en-US/Firefox_OS/Security/Security_Automation).
+This rule is being used within Mozilla to maintain and improve the security of the Firefox OS front-end codebase _Gaia_. Further documentation, which includes references to the escaping functions can be found on [MDN](https://developer.mozilla.org/en-US/Firefox_OS/Security/Security_Automation).
