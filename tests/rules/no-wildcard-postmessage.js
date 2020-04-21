@@ -8,8 +8,8 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-const rule = require("../../lib/rules/no-wildcard-postmessage.js");
-const { RuleTester } = require("eslint");
+const rule = require('../../lib/rules/no-wildcard-postmessage.js');
+const { RuleTester } = require('eslint');
 
 //------------------------------------------------------------------------------
 // Tests
@@ -17,29 +17,33 @@ const { RuleTester } = require("eslint");
 
 const eslintTester = new RuleTester();
 
-eslintTester.run("no-wildcard-postmessage", rule, {
+eslintTester.run('no-wildcard-postmessage', rule, {
   valid: [
-    "postMessage(obj);",
+    'postMessage(obj);',
     "frame.postMessage(obj, 'http://domain.tld');",
     "frame.postMessage(obj, 'http://domain.tld');",
-    "(function() {})()",
+    '(function() {})()',
   ],
 
   // Examples of code that should trigger the rule
   invalid: [
     {
       code: "postMessage(obj, '*');",
-      errors: [{
-        message: "Using postMessage() with wildcard targets is not allowed.",
-        type: "CallExpression"
-      }],
+      errors: [
+        {
+          message: 'Using postMessage() with wildcard targets is not allowed.',
+          type: 'CallExpression',
+        },
+      ],
     },
     {
       code: "win.postMessage(obj, '*');",
-      errors: [{
-        message: "Using postMessage() with wildcard targets is not allowed.",
-        type: "CallExpression"
-      }],
-    }
-  ]
+      errors: [
+        {
+          message: 'Using postMessage() with wildcard targets is not allowed.',
+          type: 'CallExpression',
+        },
+      ],
+    },
+  ],
 });

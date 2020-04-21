@@ -9,6 +9,9 @@
     "url": "https://github.com/mozfreddyb/eslint-plugin-no-wildcard-postmessage/issues"
   },
   "devDependencies": {
+    "@movable/eslint-config": "^0.5.1",
+    "@movable/eslint-config-node": "^0.4.2",
+    "@movable/prettier-config": "^0.3.1",
     "eslint": "^6.8.0",
     "eslint-plugin-node": "^11.1.0",
     "mocha": "^3.2.0"
@@ -29,8 +32,8 @@
     "url": "https://github.com/mozfreddyb/eslint-plugin-no-wildcard-postmessage/issues"
   },
   "scripts": {
-    "test": "./node_modules/.bin/mocha tests/rules/",
-    "lint": "node_modules/.bin/eslint index.js lib/**/*.js tests/**/*.js"
+    "test": "mocha tests/rules/",
+    "lint": "eslint ."
   },
   "engines": {
     "node": ">= 10"
